@@ -155,5 +155,15 @@
     <Content Include="image\项目所需图片\ico\首记录.bmp" />
     <Content Include="image\项目所需图片\图书馆背景.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{168bcb3d-1518-407d-bf95-3dd70f9b2dec}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{361886b2-ff32-4220-81ca-780bd858cb56}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
