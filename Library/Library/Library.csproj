@@ -60,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -81,6 +84,76 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="image\项目所需图片\bookcovers\7030122534919.jpg" />
+    <Content Include="image\项目所需图片\bookcovers\9787030136011.jpg" />
+    <Content Include="image\项目所需图片\bookcovers\9787030136020.jpg" />
+    <Content Include="image\项目所需图片\bookcovers\9787030136021.jpg" />
+    <Content Include="image\项目所需图片\bookcovers\9787030136022.jpg" />
+    <Content Include="image\项目所需图片\bookcovers\9787030136055.jpg" />
+    <Content Include="image\项目所需图片\bookcovers\9787030136088.jpg" />
+    <Content Include="image\项目所需图片\bookcovers\9787030177162.jpg" />
+    <Content Include="image\项目所需图片\bookcovers\9787030189080.jpg" />
+    <Content Include="image\项目所需图片\bookcovers\9787111205852.jpg" />
+    <Content Include="image\项目所需图片\bookcovers\9787113067625.jpg" />
+    <Content Include="image\项目所需图片\bookcovers\9787115124555.jpg" />
+    <Content Include="image\项目所需图片\bookcovers\9787115126887.jpg" />
+    <Content Include="image\项目所需图片\bookcovers\9787115156259.jpg" />
+    <Content Include="image\项目所需图片\bookcovers\9787121002861.jpg" />
+    <Content Include="image\项目所需图片\bookcovers\9787121010972.jpg" />
+    <Content Include="image\项目所需图片\bookcovers\9787302106487.jpg" />
+    <Content Include="image\项目所需图片\bookcovers\9787302138587.jpg" />
+    <Content Include="image\项目所需图片\bookcovers\9787302139102.jpg" />
+    <Content Include="image\项目所需图片\bookcovers\9787505384514.jpg" />
+    <Content Include="image\项目所需图片\bookcovers\9787542736857.jpg" />
+    <Content Include="image\项目所需图片\bookcovers\9787900635624.jpg" />
+    <Content Include="image\项目所需图片\ico\about.ico" />
+    <Content Include="image\项目所需图片\ico\ATTACHED.ICO" />
+    <Content Include="image\项目所需图片\ico\BOOK02.ICO" />
+    <Content Include="image\项目所需图片\ico\BOOKS01.ICO" />
+    <Content Include="image\项目所需图片\ico\Cancel.ico" />
+    <Content Include="image\项目所需图片\ico\Close.ico" />
+    <Content Include="image\项目所需图片\ico\CustomerOrder.ico" />
+    <Content Include="image\项目所需图片\ico\downLoad.ico" />
+    <Content Include="image\项目所需图片\ico\exit.ico" />
+    <Content Include="image\项目所需图片\ico\key_32.ico" />
+    <Content Include="image\项目所需图片\ico\lklLogin.ICO" />
+    <Content Include="image\项目所需图片\ico\lklLoginExit.ico" />
+    <Content Include="image\项目所需图片\ico\login.jpg" />
+    <Content Include="image\项目所需图片\ico\MngDowndown.bmp" />
+    <Content Include="image\项目所需图片\ico\MngIncdown.bmp" />
+    <Content Include="image\项目所需图片\ico\MngUpover.bmp" />
+    <Content Include="image\项目所需图片\ico\Msg.ico" />
+    <Content Include="image\项目所需图片\ico\MSGBOX03.ICO" />
+    <Content Include="image\项目所需图片\ico\new.ico" />
+    <Content Include="image\项目所需图片\ico\open.ico" />
+    <Content Include="image\项目所需图片\ico\people.ico" />
+    <Content Include="image\项目所需图片\ico\Print.ico" />
+    <Content Include="image\项目所需图片\ico\PROPS.ICO" />
+    <Content Include="image\项目所需图片\ico\Purchase.ico" />
+    <Content Include="image\项目所需图片\ico\Query.ico" />
+    <Content Include="image\项目所需图片\ico\Save.ico" />
+    <Content Include="image\项目所需图片\ico\SysIco.ico" />
+    <Content Include="image\项目所需图片\ico\TABLE.ICO" />
+    <Content Include="image\项目所需图片\ico\turn.BMP" />
+    <Content Include="image\项目所需图片\ico\UserLogin.ico" />
+    <Content Include="image\项目所需图片\ico\UserPsw.ico" />
+    <Content Include="image\项目所需图片\ico\上记录.bmp" />
+    <Content Include="image\项目所需图片\ico\下记录.bmp" />
+    <Content Include="image\项目所需图片\ico\保存.bmp" />
+    <Content Include="image\项目所需图片\ico\修改.bmp" />
+    <Content Include="image\项目所需图片\ico\关闭.bmp" />
+    <Content Include="image\项目所需图片\ico\删除.bmp" />
+    <Content Include="image\项目所需图片\ico\取消.bmp" />
+    <Content Include="image\项目所需图片\ico\尾记录.bmp" />
+    <Content Include="image\项目所需图片\ico\打印.BMP" />
+    <Content Include="image\项目所需图片\ico\搜索.bmp" />
+    <Content Include="image\项目所需图片\ico\新增.bmp" />
+    <Content Include="image\项目所需图片\ico\查询选择.bmp" />
+    <Content Include="image\项目所需图片\ico\计算.bmp" />
+    <Content Include="image\项目所需图片\ico\首记录.bmp" />
+    <Content Include="image\项目所需图片\图书馆背景.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
