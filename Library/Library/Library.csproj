@@ -46,11 +46,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmLogin.cs">
+    <Compile Include="FrmAddBook.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmLogin.Designer.cs">
-      <DependentUpon>FrmLogin.cs</DependentUpon>
+    <Compile Include="FrmAddBook.Designer.cs">
+      <DependentUpon>FrmAddBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdminLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminLogin.Designer.cs">
+      <DependentUpon>FrmAdminLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBookManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBookManage.Designer.cs">
+      <DependentUpon>FrmBookManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBorrowBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBorrowBook.Designer.cs">
+      <DependentUpon>FrmBorrowBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEidtReader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEidtReader.Designer.cs">
+      <DependentUpon>FrmEidtReader.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
@@ -58,10 +82,61 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmModifyPwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModifyPwd.Designer.cs">
+      <DependentUpon>FrmModifyPwd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNewBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNewBook.Designer.cs">
+      <DependentUpon>FrmNewBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReaderManger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReaderManger.Designer.cs">
+      <DependentUpon>FrmReaderManger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReturnBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReturnBook.Designer.cs">
+      <DependentUpon>FrmReturnBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAddBook.resx">
+      <DependentUpon>FrmAddBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdminLogin.resx">
+      <DependentUpon>FrmAdminLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBookManage.resx">
+      <DependentUpon>FrmBookManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBorrowBook.resx">
+      <DependentUpon>FrmBorrowBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEidtReader.resx">
+      <DependentUpon>FrmEidtReader.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModifyPwd.resx">
+      <DependentUpon>FrmModifyPwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNewBook.resx">
+      <DependentUpon>FrmNewBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReaderManger.resx">
+      <DependentUpon>FrmReaderManger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReturnBook.resx">
+      <DependentUpon>FrmReturnBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
