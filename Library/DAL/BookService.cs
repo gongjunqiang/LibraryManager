@@ -131,6 +131,30 @@ namespace DAL
         }
         #endregion
 
+        #region 图书上架
+        /// <summary>
+        /// 根据图书条码获取图书信息
+        /// </summary>
+        /// <param name="barCode"></param>
+        /// <returns></returns>
+        public Book GetBookInfoByBarCode(string barCode)
+        {
+            string sql = "select BarCode,BookName,Author,BookImage,BookCount,BookPosition,PublisherName,CategoryName from Books";
+            sql += " inner join Categories on Books.BookCategoryId=Categories.CategoryId";
+            sql += " inner join Publishers on Books.PublisherId=Publishers.PublisherId where BarCode=@BarCode";
+
+
+
+
+            return null;
+
+
+        }
+
+
+
+        #endregion
+
 
     }
 }

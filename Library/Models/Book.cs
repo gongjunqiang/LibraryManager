@@ -28,5 +28,7 @@ namespace Models
 
         //扩展属性
         public string PublisherName { get; set; }
+
+        public string CategoryName { get; set; }
     }
 }
