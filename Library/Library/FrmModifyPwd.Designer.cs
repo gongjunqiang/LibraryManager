@@ -47,6 +47,7 @@
             this.btnCancel.TabIndex = 20;
             this.btnCancel.Text = "取 消";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // btnModify
             // 

@@ -32,7 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddBook));
             this.pbImage = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbCurrentImage = new System.Windows.Forms.PictureBox();
             this.gbBook = new System.Windows.Forms.GroupBox();
             this.txtBookName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -68,7 +68,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCurrentImage)).BeginInit();
             this.gbBook.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookList)).BeginInit();
             this.SuspendLayout();
@@ -82,14 +82,16 @@
             this.pbImage.TabIndex = 0;
             this.pbImage.TabStop = false;
             // 
-            // pictureBox1
+            // pbCurrentImage
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(256, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(217, 226);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbCurrentImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbCurrentImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCurrentImage.Location = new System.Drawing.Point(256, 19);
+            this.pbCurrentImage.Name = "pbCurrentImage";
+            this.pbCurrentImage.Size = new System.Drawing.Size(217, 226);
+            this.pbCurrentImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCurrentImage.TabIndex = 0;
+            this.pbCurrentImage.TabStop = false;
             // 
             // gbBook
             // 
@@ -185,6 +187,8 @@
             this.txtBarCode.Name = "txtBarCode";
             this.txtBarCode.Size = new System.Drawing.Size(142, 21);
             this.txtBarCode.TabIndex = 25;
+            this.txtBarCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBarCode_KeyDown);
+            this.txtBarCode.Leave += new System.EventHandler(this.TxtBarCode_Leave);
             // 
             // label6
             // 
@@ -283,6 +287,7 @@
             this.btnCloseVideo.TabIndex = 29;
             this.btnCloseVideo.Text = "关闭摄像头";
             this.btnCloseVideo.UseVisualStyleBackColor = true;
+            this.btnCloseVideo.Click += new System.EventHandler(this.BtnCloseVideo_Click);
             // 
             // dgvBookList
             // 
@@ -321,6 +326,7 @@
             this.dgvBookList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBookList.Size = new System.Drawing.Size(970, 351);
             this.dgvBookList.TabIndex = 28;
+            this.dgvBookList.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.DgvBookList_RowPostPaint);
             // 
             // BarCode
             // 
@@ -387,6 +393,7 @@
             this.btnClear.TabIndex = 24;
             this.btnClear.Text = "清除所选";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
             // btnChoseImage
             // 
@@ -396,6 +403,7 @@
             this.btnChoseImage.TabIndex = 25;
             this.btnChoseImage.Text = "选择图片";
             this.btnChoseImage.UseVisualStyleBackColor = true;
+            this.btnChoseImage.Click += new System.EventHandler(this.BtnChoseImage_Click);
             // 
             // btnTake
             // 
@@ -405,15 +413,19 @@
             this.btnTake.TabIndex = 23;
             this.btnTake.Text = "开始拍照";
             this.btnTake.UseVisualStyleBackColor = true;
+            this.btnTake.Click += new System.EventHandler(this.BtnTake_Click);
             // 
             // btnStartVideo
             // 
+            this.btnStartVideo.BackColor = System.Drawing.SystemColors.Control;
+            this.btnStartVideo.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.btnStartVideo.Location = new System.Drawing.Point(22, 265);
             this.btnStartVideo.Name = "btnStartVideo";
             this.btnStartVideo.Size = new System.Drawing.Size(88, 39);
             this.btnStartVideo.TabIndex = 22;
             this.btnStartVideo.Text = "启动摄像头";
             this.btnStartVideo.UseVisualStyleBackColor = true;
+            this.btnStartVideo.Click += new System.EventHandler(this.BtnStartVideo_Click);
             // 
             // btnClose
             // 
@@ -426,6 +438,7 @@
             this.btnClose.Text = "关闭窗口";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // btnAdd
             // 
@@ -438,6 +451,7 @@
             this.btnAdd.Text = "确认添加";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // FrmAddBook
             // 
@@ -453,14 +467,14 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.gbBook);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbCurrentImage);
             this.Controls.Add(this.pbImage);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAddBook";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "[添加新图书]";
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCurrentImage)).EndInit();
             this.gbBook.ResumeLayout(false);
             this.gbBook.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookList)).EndInit();
@@ -471,7 +485,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pbImage;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbCurrentImage;
         private System.Windows.Forms.GroupBox gbBook;
         private System.Windows.Forms.TextBox txtBookName;
         private System.Windows.Forms.Label label1;

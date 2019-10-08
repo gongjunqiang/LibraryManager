@@ -247,6 +247,7 @@
             this.btnReaderManager.Text = "会员管理";
             this.btnReaderManager.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReaderManager.UseVisualStyleBackColor = true;
+            this.btnReaderManager.Click += new System.EventHandler(this.BtnReaderManager_Click);
             // 
             // label2
             // 
@@ -292,6 +293,7 @@
             this.btnModifyPwd.Text = "密码修改";
             this.btnModifyPwd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnModifyPwd.UseVisualStyleBackColor = true;
+            this.btnModifyPwd.Click += new System.EventHandler(this.BtnModifyPwd_Click);
             // 
             // btnExit
             // 
@@ -304,6 +306,7 @@
             this.btnExit.Text = "退出系统";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // btnReturnBook
             // 
@@ -316,6 +319,7 @@
             this.btnReturnBook.Text = "图书归还";
             this.btnReturnBook.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReturnBook.UseVisualStyleBackColor = true;
+            this.btnReturnBook.Click += new System.EventHandler(this.BtnReturnBook_Click);
             // 
             // btnBookNew
             // 
@@ -328,6 +332,7 @@
             this.btnBookNew.Text = " 图书上架";
             this.btnBookNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBookNew.UseVisualStyleBackColor = true;
+            this.btnBookNew.Click += new System.EventHandler(this.BtnBookNew_Click);
             // 
             // btnBorrowBook
             // 
@@ -337,9 +342,10 @@
             this.btnBorrowBook.Name = "btnBorrowBook";
             this.btnBorrowBook.Size = new System.Drawing.Size(82, 41);
             this.btnBorrowBook.TabIndex = 11;
-            this.btnBorrowBook.Text = "图书出借";
+            this.btnBorrowBook.Text = "图书借阅";
             this.btnBorrowBook.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBorrowBook.UseVisualStyleBackColor = true;
+            this.btnBorrowBook.Click += new System.EventHandler(this.BtnBorrowBook_Click);
             // 
             // btnBookManage
             // 
@@ -349,9 +355,10 @@
             this.btnBookManage.Name = "btnBookManage";
             this.btnBookManage.Size = new System.Drawing.Size(82, 41);
             this.btnBookManage.TabIndex = 12;
-            this.btnBookManage.Text = "图书维护";
+            this.btnBookManage.Text = "图书管理";
             this.btnBookManage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBookManage.UseVisualStyleBackColor = true;
+            this.btnBookManage.Click += new System.EventHandler(this.BtnBookManage_Click);
             // 
             // btnAddBook
             // 
@@ -364,6 +371,7 @@
             this.btnAddBook.Text = "新增图书";
             this.btnAddBook.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddBook.UseVisualStyleBackColor = true;
+            this.btnAddBook.Click += new System.EventHandler(this.BtnAddBook_Click);
             // 
             // FrmMain
             // 
@@ -377,6 +385,7 @@
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "[图书借阅管理系统]";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);

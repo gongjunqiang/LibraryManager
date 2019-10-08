@@ -17,13 +17,16 @@ namespace Models
         public string BookName { get; set; }
         public string Author { get; set; }
         public int PublisherId { get; set; }
-        public DateTime PublisDate { get; set; }
-        public int BookCategory { get; set; }
+        public DateTime PublishDate { get; set; }
+        public int BookCategoryId { get; set; }
         public double UnitPrice { get; set; }
         public string BookImage { get; set; }
         public int BookCount { get; set; }
         public int Remainder { get; set; }
         public string BookPosition { get; set; }
         public DateTime RegTime { get; set; }
+
+        //扩展属性
+        public string PublisherName { get; set; }
     }
 }

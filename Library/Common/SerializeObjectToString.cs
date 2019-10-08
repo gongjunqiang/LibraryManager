@@ -13,7 +13,7 @@ namespace Common
     public class SerializeObjectToString
     {
         //将Object类型对象(注：必须是可序列化的对象)转换为二进制序列字符串
-        public string SerializeObject(object obj)
+        public static string SerializeObject(object obj)
         {
             IFormatter formatter = new BinaryFormatter();
             string result = string.Empty;
@@ -29,7 +29,7 @@ namespace Common
             return result;
         }
         //将二进制序列字符串转换为Object类型对象
-        public object DeserializeObject(string str)
+        public static object DeserializeObject(string str)
         {
             IFormatter formatter = new BinaryFormatter();
             //byte[] byt = Encoding.UTF8.GetBytes(str);

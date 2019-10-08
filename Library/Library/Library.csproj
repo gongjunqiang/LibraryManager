@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MyVideo">
+      <HintPath>..\..\..\..\C#\录播课\【喜科堂】课程[12]【中级扩展】：【项目实战】（四）图书借阅管理系统\本项目资料\项目需要的相关类和类库\摄像头操作类库【有兼容问题】\MyVideo.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -234,6 +237,10 @@
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{168bcb3d-1518-407d-bf95-3dd70f9b2dec}</Project>
       <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{1CA4E1FB-D250-4DA0-B39C-D1ACAB606E15}</Project>
+      <Name>Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{361886b2-ff32-4220-81ca-780bd858cb56}</Project>

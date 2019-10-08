@@ -58,6 +58,7 @@
             this.btnClose.Text = "退  出";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // btnLogin
             // 
@@ -70,6 +71,7 @@
             this.btnLogin.Text = "登  录";
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
             // txtLoginPwd
             // 
@@ -79,7 +81,7 @@
             this.txtLoginPwd.PasswordChar = '*';
             this.txtLoginPwd.Size = new System.Drawing.Size(135, 21);
             this.txtLoginPwd.TabIndex = 15;
-            this.txtLoginPwd.Text = "123456";
+            this.txtLoginPwd.Text = "195814";
             // 
             // txtAdminId
             // 
@@ -88,7 +90,7 @@
             this.txtAdminId.Name = "txtAdminId";
             this.txtAdminId.Size = new System.Drawing.Size(135, 21);
             this.txtAdminId.TabIndex = 12;
-            this.txtAdminId.Text = "1001";
+            this.txtAdminId.Text = "1000";
             // 
             // label2
             // 

@@ -16,7 +16,7 @@ namespace DBUtility
     public class SqlHelper
     {
         //封装数据库连接字符串
-        private static readonly string connString = ConfigurationManager.ConnectionStrings["connString"].ToString();
+        private static string connString = ConfigurationManager.ConnectionStrings["connString"].ToString();
 
         #region 封装格式化SQL语句执行的各种方法
         /// <summary>
@@ -444,7 +444,7 @@ namespace DBUtility
         /// </summary>
         /// <param name="sqlList"></param>
         /// <returns></returns>
-        public static bool ExecuteTransation(List<string> sqlList)
+        public static bool ExecuteTransaction(List<string> sqlList)
         {
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand cmd = new SqlCommand();
@@ -488,7 +488,7 @@ namespace DBUtility
         /// <param name="detailSql"></param>
         /// <param name="detailParam"></param>
         /// <returns></returns>
-        public static bool ExecuteTransation(string mainSql, SqlParameter[] mainParam, string detailSql, List<SqlParameter[]> detailParam)
+        public static bool ExecuteTransaction(string mainSql, SqlParameter[] mainParam, string detailSql, List<SqlParameter[]> detailParam)
         {
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand cmd = new SqlCommand();
@@ -539,7 +539,7 @@ namespace DBUtility
         /// <param name="procedureName">存储过程名称</param>
         /// <param name="paramArray">存储过程参数数组集合</param>
         /// <returns>返回基于事务的存储过程是否调用成功</returns>
-        public static bool ExecuteTransation(string procedureName, List<SqlParameter[]> paramArray)
+        public static bool ExecuteTransaction(string procedureName, List<SqlParameter[]> paramArray)
         {
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand cmd = new SqlCommand();
