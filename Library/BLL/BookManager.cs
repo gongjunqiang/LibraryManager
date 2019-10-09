@@ -64,7 +64,6 @@ namespace BLL
         }
         #endregion
 
-
         #region 图书上架
         /// <summary>
         /// 根据图书条码获取图书信息
@@ -86,6 +85,35 @@ namespace BLL
         {
             return bookService.UpdateBookCount(barCode, count);
         }
+        #endregion
+
+        #region 图书管理
+        //组合查询图书信息
+        public List<Book> QueryBook(string categoryId, string barCode, string bookName)
+        {
+            return bookService.QueryBook(categoryId, barCode, bookName);
+        }
+
+        /// <summary>
+        /// 根据图书编码删除图书
+        /// </summary>
+        /// <param name="bookId"></param>
+        /// <returns></returns>
+        public int DeleteBookByBookId(string bookId)
+        {
+            return bookService.DeleteBookByBookId(bookId);
+        }
+
+        /// <summary>
+        /// 根据图书Id更新图书信息
+        /// </summary>
+        /// <param name="book"></param>
+        /// <returns></returns>
+        public int UpdateBookInfoByBarCode(Book book)
+        {
+            return bookService.UpdateBookInfoByBarCode(book);
+        }
+
         #endregion
     }
 }

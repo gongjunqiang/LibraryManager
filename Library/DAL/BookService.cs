@@ -201,5 +201,132 @@ namespace DAL
             }
         }
         #endregion
+
+        #region 图书管理
+        //组合查询图书信息
+        public List<Book> QueryBook(string categoryId, string barCode, string bookName)
+        {
+            string sql ="select BookId, BarCode, BookName, Author, Books.PublisherId, PublishDate, BookCategoryId, UnitPrice, BookImage, BookCount, Remainder, BookPosition,RegTime,PublisherName,CategoryName from Books";
+            sql += " inner join Categories on Books.BookCategoryId = Categories.CategoryId";
+            sql += " inner join Publishers on Books.PublisherId = Publishers.PublisherId where 1=1";
+            List<SqlParameter> paramList = new List<SqlParameter>();
+            List<Book> booklist=new List<Book>();
+            if (!string.IsNullOrEmpty(barCode))
+            {
+                sql += " and barCode=@BarCode";
+                paramList.Add(new SqlParameter("@BarCode", barCode));
+            }
+            else
+            {
+                if (!string.IsNullOrEmpty(categoryId) && categoryId != "-1")
+                {
+                    sql += " and Categories.CategoryId=@CategoryId";
+                    paramList.Add(new SqlParameter("@CategoryId", categoryId));
+                }
+                if (!string.IsNullOrEmpty(bookName))
+                {
+                    sql += " and BookName like @BookName";
+                    paramList.Add(new SqlParameter("@BookName", "%"+bookName+ "%"));
+                }
+            }
+
+            try
+            {
+                SqlDataReader reader = SqlHelper.ExecuteReader(sql, paramList.ToArray());
+                while (reader.Read())
+                {
+                    booklist.Add(new Book
+                    {
+                        BookId = Convert.ToInt32(reader["BookId"]),
+                        BarCode = reader["BarCode"].ToString(),
+                        BookName = reader["BookName"].ToString(),
+                        Author = reader["Author"].ToString(),
+                        PublisherId = Convert.ToInt32(reader["PublisherId"]),
+                        PublishDate = Convert.ToDateTime(reader["PublishDate"]),
+                        BookCategoryId = Convert.ToInt32(reader["BookCategoryId"]),
+                        UnitPrice = Convert.ToDouble(reader["UnitPrice"]),
+                        BookImage = reader["BookImage"] is null ? "" : reader["BookImage"].ToString(),
+                        BookCount = Convert.ToInt32(reader["BookCount"]),
+                        Remainder = Convert.ToInt32(reader["Remainder"]),
+                        BookPosition = reader["BookPosition"].ToString(),
+                        RegTime = Convert.ToDateTime(reader["RegTime"]),
+                        PublisherName = reader["PublisherName"].ToString(),
+                        CategoryName = reader["CategoryName"].ToString()
+                    });
+                }
+                reader.Close();
+                return booklist;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// 根据图书编码删除图书
+        /// </summary>
+        /// <param name="bookId"></param>
+        /// <returns></returns>
+        public int DeleteBookByBookId(string bookId)
+        {
+            string sql = "delete from Books where BookId=@BookId";
+            SqlParameter[] sqlParameters = new SqlParameter[]
+            {
+                new SqlParameter("@BookId",bookId),
+            };
+            try
+            {
+
+                return SqlHelper.ExecuteNonQuery(sql, sqlParameters);
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 547)
+                {
+                    throw new Exception("该图书已经被借阅，不能删除！");
+                }
+                else
+                {
+                    throw new Exception("删除图书出现异常："+ex.Message);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// 根据图书Id更新图书信息
+        /// </summary>
+        /// <param name="book"></param>
+        /// <returns></returns>
+        public int UpdateBookInfoByBarCode(Book book)
+        {
+            SqlParameter[] sqlParameters = new SqlParameter[]
+            {
+                new SqlParameter("@BookId",book.BookId),
+                new SqlParameter("@BookName",book.BookName),
+                new SqlParameter("@Author",book.Author),
+                new SqlParameter("@PublisherId",book.PublisherId),
+                new SqlParameter("@PublishDate",book.PublishDate),
+                new SqlParameter("@BookCategoryId",book.BookCategoryId),
+                new SqlParameter("@UnitPrice",book.UnitPrice),
+                new SqlParameter("@BookImage",book.BookImage),
+                new SqlParameter("@BookPosition",book.BookPosition),
+            };
+
+            try
+            {
+                return SqlHelper.ExecuteNonQuery("usp_UpdateBookInfoByBookId", sqlParameters, true);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        #endregion
     }
 }

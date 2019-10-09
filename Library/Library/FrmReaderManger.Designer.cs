@@ -32,8 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReaderManger));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnEdit = new System.Windows.Forms.Button();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
@@ -55,6 +53,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.cboRole = new System.Windows.Forms.ComboBox();
             this.btnQueryReader = new System.Windows.Forms.Button();
             this.btnEnable = new System.Windows.Forms.Button();
@@ -71,9 +71,33 @@
             this.RegTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.StatusDesc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ReaderAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnCloseVideo = new System.Windows.Forms.Button();
+            this.pbReaderPhoto = new System.Windows.Forms.PictureBox();
+            this.btnTake = new System.Windows.Forms.Button();
+            this.pbReaderVideo = new System.Windows.Forms.PictureBox();
+            this.btnStartVideo = new System.Windows.Forms.Button();
+            this.cboReaderRole = new System.Windows.Forms.ComboBox();
+            this.rdoFemale = new System.Windows.Forms.RadioButton();
+            this.rdoMale = new System.Windows.Forms.RadioButton();
+            this.txtReaderName = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtReadingCard = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtPostcode = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbReaderImg)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbReaderPhoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbReaderVideo)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -121,24 +145,6 @@
             this.tabPage1.Size = new System.Drawing.Size(975, 211);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "会员查询";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.ImageIndex = 1;
-            this.tabPage2.Location = new System.Drawing.Point(4, 26);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(975, 211);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "会员办证";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "people.ico");
-            this.imageList1.Images.SetKeyName(1, "BOOK02.ICO");
             // 
             // btnEdit
             // 
@@ -351,6 +357,46 @@
             this.label7.TabIndex = 29;
             this.label7.Text = "会员角色：";
             // 
+            // tabPage2
+            // 
+            this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPage2.Controls.Add(this.btnAdd);
+            this.tabPage2.Controls.Add(this.btnCloseVideo);
+            this.tabPage2.Controls.Add(this.pbReaderPhoto);
+            this.tabPage2.Controls.Add(this.btnTake);
+            this.tabPage2.Controls.Add(this.pbReaderVideo);
+            this.tabPage2.Controls.Add(this.btnStartVideo);
+            this.tabPage2.Controls.Add(this.cboReaderRole);
+            this.tabPage2.Controls.Add(this.rdoFemale);
+            this.tabPage2.Controls.Add(this.rdoMale);
+            this.tabPage2.Controls.Add(this.txtReaderName);
+            this.tabPage2.Controls.Add(this.label17);
+            this.tabPage2.Controls.Add(this.txtPhone);
+            this.tabPage2.Controls.Add(this.txtAddress);
+            this.tabPage2.Controls.Add(this.label18);
+            this.tabPage2.Controls.Add(this.txtReadingCard);
+            this.tabPage2.Controls.Add(this.label19);
+            this.tabPage2.Controls.Add(this.txtPostcode);
+            this.tabPage2.Controls.Add(this.label20);
+            this.tabPage2.Controls.Add(this.label21);
+            this.tabPage2.Controls.Add(this.label22);
+            this.tabPage2.Controls.Add(this.label23);
+            this.tabPage2.ImageIndex = 1;
+            this.tabPage2.Location = new System.Drawing.Point(4, 26);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(975, 211);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "会员办证";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "people.ico");
+            this.imageList1.Images.SetKeyName(1, "BOOK02.ICO");
+            // 
             // cboRole
             // 
             this.cboRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -444,6 +490,7 @@
             this.StatusDesc,
             this.ReaderAddress});
             this.lvReader.GridLines = true;
+            this.lvReader.HideSelection = false;
             this.lvReader.Location = new System.Drawing.Point(16, 314);
             this.lvReader.Name = "lvReader";
             this.lvReader.Size = new System.Drawing.Size(975, 348);
@@ -496,6 +543,219 @@
             this.ReaderAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ReaderAddress.Width = 260;
             // 
+            // btnAdd
+            // 
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(382, 154);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(88, 39);
+            this.btnAdd.TabIndex = 54;
+            this.btnAdd.Text = "确认添加";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // btnCloseVideo
+            // 
+            this.btnCloseVideo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCloseVideo.Location = new System.Drawing.Point(381, 62);
+            this.btnCloseVideo.Name = "btnCloseVideo";
+            this.btnCloseVideo.Size = new System.Drawing.Size(89, 39);
+            this.btnCloseVideo.TabIndex = 56;
+            this.btnCloseVideo.Text = "关闭摄像头";
+            this.btnCloseVideo.UseVisualStyleBackColor = true;
+            // 
+            // pbReaderPhoto
+            // 
+            this.pbReaderPhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbReaderPhoto.Location = new System.Drawing.Point(202, 15);
+            this.pbReaderPhoto.Name = "pbReaderPhoto";
+            this.pbReaderPhoto.Size = new System.Drawing.Size(159, 180);
+            this.pbReaderPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbReaderPhoto.TabIndex = 52;
+            this.pbReaderPhoto.TabStop = false;
+            // 
+            // btnTake
+            // 
+            this.btnTake.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnTake.Location = new System.Drawing.Point(382, 108);
+            this.btnTake.Name = "btnTake";
+            this.btnTake.Size = new System.Drawing.Size(88, 39);
+            this.btnTake.TabIndex = 55;
+            this.btnTake.Text = "开始拍照";
+            this.btnTake.UseVisualStyleBackColor = true;
+            // 
+            // pbReaderVideo
+            // 
+            this.pbReaderVideo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbReaderVideo.Location = new System.Drawing.Point(21, 15);
+            this.pbReaderVideo.Name = "pbReaderVideo";
+            this.pbReaderVideo.Size = new System.Drawing.Size(159, 180);
+            this.pbReaderVideo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbReaderVideo.TabIndex = 51;
+            this.pbReaderVideo.TabStop = false;
+            // 
+            // btnStartVideo
+            // 
+            this.btnStartVideo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnStartVideo.Location = new System.Drawing.Point(381, 16);
+            this.btnStartVideo.Name = "btnStartVideo";
+            this.btnStartVideo.Size = new System.Drawing.Size(88, 39);
+            this.btnStartVideo.TabIndex = 53;
+            this.btnStartVideo.Text = "启动摄像头";
+            this.btnStartVideo.UseVisualStyleBackColor = true;
+            // 
+            // cboReaderRole
+            // 
+            this.cboReaderRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboReaderRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboReaderRole.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.cboReaderRole.FormattingEnabled = true;
+            this.cboReaderRole.Location = new System.Drawing.Point(811, 77);
+            this.cboReaderRole.Name = "cboReaderRole";
+            this.cboReaderRole.Size = new System.Drawing.Size(142, 20);
+            this.cboReaderRole.TabIndex = 50;
+            // 
+            // rdoFemale
+            // 
+            this.rdoFemale.AutoSize = true;
+            this.rdoFemale.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.rdoFemale.Location = new System.Drawing.Point(626, 79);
+            this.rdoFemale.Name = "rdoFemale";
+            this.rdoFemale.Size = new System.Drawing.Size(35, 16);
+            this.rdoFemale.TabIndex = 48;
+            this.rdoFemale.TabStop = true;
+            this.rdoFemale.Text = "女";
+            this.rdoFemale.UseVisualStyleBackColor = true;
+            // 
+            // rdoMale
+            // 
+            this.rdoMale.AutoSize = true;
+            this.rdoMale.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.rdoMale.Location = new System.Drawing.Point(575, 79);
+            this.rdoMale.Name = "rdoMale";
+            this.rdoMale.Size = new System.Drawing.Size(35, 16);
+            this.rdoMale.TabIndex = 49;
+            this.rdoMale.TabStop = true;
+            this.rdoMale.Text = "男";
+            this.rdoMale.UseVisualStyleBackColor = true;
+            // 
+            // txtReaderName
+            // 
+            this.txtReaderName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtReaderName.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtReaderName.Location = new System.Drawing.Point(575, 25);
+            this.txtReaderName.Name = "txtReaderName";
+            this.txtReaderName.Size = new System.Drawing.Size(142, 21);
+            this.txtReaderName.TabIndex = 43;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label17.Location = new System.Drawing.Point(504, 29);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(65, 12);
+            this.label17.TabIndex = 36;
+            this.label17.Text = "读者姓名：";
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPhone.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtPhone.Location = new System.Drawing.Point(810, 126);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(142, 21);
+            this.txtPhone.TabIndex = 46;
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAddress.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtAddress.Location = new System.Drawing.Point(574, 172);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(378, 21);
+            this.txtAddress.TabIndex = 47;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label18.Location = new System.Drawing.Point(739, 130);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(65, 12);
+            this.label18.TabIndex = 37;
+            this.label18.Text = "联系电话：";
+            // 
+            // txtReadingCard
+            // 
+            this.txtReadingCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtReadingCard.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtReadingCard.Location = new System.Drawing.Point(810, 25);
+            this.txtReadingCard.Name = "txtReadingCard";
+            this.txtReadingCard.Size = new System.Drawing.Size(143, 21);
+            this.txtReadingCard.TabIndex = 44;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label19.Location = new System.Drawing.Point(503, 176);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(65, 12);
+            this.label19.TabIndex = 38;
+            this.label19.Text = "现在住址：";
+            // 
+            // txtPostcode
+            // 
+            this.txtPostcode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPostcode.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtPostcode.Location = new System.Drawing.Point(575, 126);
+            this.txtPostcode.Name = "txtPostcode";
+            this.txtPostcode.Size = new System.Drawing.Size(142, 21);
+            this.txtPostcode.TabIndex = 45;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label20.Location = new System.Drawing.Point(504, 130);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(65, 12);
+            this.label20.TabIndex = 39;
+            this.label20.Text = "邮政编码：";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label21.Location = new System.Drawing.Point(739, 81);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(65, 12);
+            this.label21.TabIndex = 40;
+            this.label21.Text = "会员角色：";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label22.Location = new System.Drawing.Point(516, 81);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(41, 12);
+            this.label22.TabIndex = 41;
+            this.label22.Text = "性别：";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label23.Location = new System.Drawing.Point(727, 29);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(77, 12);
+            this.label23.TabIndex = 42;
+            this.label23.Text = "借阅证编号：";
+            // 
             // FrmReaderManger
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -519,6 +779,10 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbReaderImg)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbReaderPhoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbReaderVideo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -567,5 +831,26 @@
         private System.Windows.Forms.ColumnHeader RegTime;
         private System.Windows.Forms.ColumnHeader StatusDesc;
         private System.Windows.Forms.ColumnHeader ReaderAddress;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnCloseVideo;
+        private System.Windows.Forms.PictureBox pbReaderPhoto;
+        private System.Windows.Forms.Button btnTake;
+        private System.Windows.Forms.PictureBox pbReaderVideo;
+        private System.Windows.Forms.Button btnStartVideo;
+        private System.Windows.Forms.ComboBox cboReaderRole;
+        private System.Windows.Forms.RadioButton rdoFemale;
+        private System.Windows.Forms.RadioButton rdoMale;
+        private System.Windows.Forms.TextBox txtReaderName;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtReadingCard;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox txtPostcode;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
     }
 }

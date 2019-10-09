@@ -110,6 +110,7 @@
             this.btnChoseImage.TabIndex = 57;
             this.btnChoseImage.Text = "选择图片";
             this.btnChoseImage.UseVisualStyleBackColor = true;
+            this.btnChoseImage.Click += new System.EventHandler(this.BtnChoseImage_Click);
             // 
             // btnTake
             // 
@@ -360,6 +361,7 @@
             this.btnSave.Text = "保存修改";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // groupBox2
             // 
@@ -413,6 +415,7 @@
             this.btnQuery.Text = "查  询";
             this.btnQuery.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnQuery.UseVisualStyleBackColor = true;
+            this.btnQuery.Click += new System.EventHandler(this.BtnQuery_Click);
             // 
             // label3
             // 
@@ -479,6 +482,8 @@
             this.dgvBookList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBookList.Size = new System.Drawing.Size(963, 292);
             this.dgvBookList.TabIndex = 51;
+            this.dgvBookList.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.DgvBookList_RowPostPaint);
+            this.dgvBookList.SelectionChanged += new System.EventHandler(this.DgvBookList_SelectionChanged);
             // 
             // BarCode
             // 
@@ -547,6 +552,7 @@
             this.btnClose.Text = "关闭窗口";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // btnDel
             // 
@@ -559,6 +565,7 @@
             this.btnDel.Text = "删  除";
             this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.BtnDel_Click);
             // 
             // FrmBookManage
             // 
