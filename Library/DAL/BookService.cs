@@ -139,22 +139,67 @@ namespace DAL
         /// <returns></returns>
         public Book GetBookInfoByBarCode(string barCode)
         {
-            string sql = "select BarCode,BookName,Author,BookImage,BookCount,BookPosition,PublisherName,CategoryName from Books";
-            sql += " inner join Categories on Books.BookCategoryId=Categories.CategoryId";
-            sql += " inner join Publishers on Books.PublisherId=Publishers.PublisherId where BarCode=@BarCode";
-
-
-
-
-            return null;
-
-
+            SqlParameter[] sqlParameters = new SqlParameter[]
+            {
+                new SqlParameter("@BarCode",barCode), 
+            };
+            Book booInfo = null;
+            try
+            {
+                SqlDataReader reader = SqlHelper.ExecuteReader("usp_QueryBookInfo", sqlParameters,true);
+                if (reader.Read())
+                {
+                    booInfo =new Book
+                    {
+                        BookId=Convert.ToInt32(reader["BookId"]),
+                        BarCode = reader["BarCode"].ToString(),
+                        BookName = reader["BookName"].ToString(),
+                        Author = reader["Author"].ToString(),
+                        PublisherId = Convert.ToInt32(reader["PublisherId"]),
+                        PublishDate = Convert.ToDateTime(reader["PublishDate"]),
+                        BookCategoryId = Convert.ToInt32(reader["BookCategoryId"]),
+                        UnitPrice = Convert.ToDouble(reader["UnitPrice"]),
+                        BookImage = reader["BookImage"] is null?"": reader["BookImage"].ToString(),
+                        BookCount = Convert.ToInt32(reader["BookCount"]),
+                        Remainder = Convert.ToInt32(reader["Remainder"]),
+                        BookPosition = reader["BookPosition"].ToString(),
+                        RegTime = Convert.ToDateTime(reader["RegTime"]),
+                        PublisherName = reader["PublisherName"].ToString(),
+                        CategoryName = reader["CategoryName"].ToString()
+                    };
+                }
+                reader.Close();
+                return booInfo;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-
-
+        /// <summary>
+        /// 根据图书编号更新图书数量
+        /// </summary>
+        /// <param name="barCode"></param>
+        /// <param name="count"></param>
+        /// <returns></returns>
+        public int UpdateBookCount(string barCode,int count)
+        {
+            string sql = "update Books set BookCount=BookCount+@BookCount where BarCode=@BarCode";
+            SqlParameter[] sqlParameters = new SqlParameter[]
+            {
+                new SqlParameter("@BarCode",barCode),
+                new SqlParameter("@BookCount",count),
+            };
+            try
+            {
+                return SqlHelper.ExecuteNonQuery(sql,sqlParameters);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         #endregion
-
-
     }
 }
