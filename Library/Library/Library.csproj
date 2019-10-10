@@ -164,6 +164,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="image\MyVideo.dll" />
     <Content Include="image\项目所需图片\bookcovers\7030122534919.jpg" />
     <Content Include="image\项目所需图片\bookcovers\9787030136011.jpg" />
     <Content Include="image\项目所需图片\bookcovers\9787030136020.jpg" />

@@ -66,6 +66,7 @@ namespace DAL
                 new SqlParameter("@PhoneNumber",reader.PhoneNumber),
                 new SqlParameter("@RoleId",reader.RoleId),
                 new SqlParameter("@ReaderImage",reader.ReaderImage),
+                new SqlParameter("@ReaderId",reader.ReaderId),
             };
 
             try

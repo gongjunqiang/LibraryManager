@@ -30,5 +30,7 @@ namespace Models
 
         public string StatusDesc { get; set; }
         public string RoleName { get; set; }
+
+        public int AllowCount { get; set; }
     }
 }

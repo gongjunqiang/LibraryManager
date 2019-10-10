@@ -18,11 +18,12 @@ namespace Library
     {
         private ReaderManager readerManager = new ReaderManager();
         public Reader reader = null;
+        public DataTable dt = null;
         public FrmReaderManger()
         {
             InitializeComponent();
             #region 数据初始化
-            DataTable dt = readerManager.GetAllReaderRole();
+            dt = readerManager.GetAllReaderRole();
             this.cboRole.DataSource = dt;
             this.cboRole.DisplayMember = "RoleName";
             this.cboRole.ValueMember = "RoleId";
@@ -220,6 +221,13 @@ namespace Library
             this.txt_ReadingCard.Clear();
             this.btnEnable.Enabled = false;
             this.btnEdit.Enabled = false;
+        }
+
+        //修改
+        private void BtnEdit_Click(object sender, EventArgs e)
+        {
+             FrmEidtReader frmEidtReader = new FrmEidtReader(reader, dt);
+             frmEidtReader.ShowDialog();
         }
     }
 }
