@@ -180,7 +180,7 @@ namespace DAL
 
         private Reader QueryReaderInfo(SqlParameter[] sqlParameters,string sqlWhere)
         {
-            string sql = "select ReaderId,ReadingCard,ReaderName,Gender,IDCard,ReaderAddress,PostCode,PhoneNumber,ReaderRoles.RoleId,ReaderImage,StatusId,RoleName from Readers";
+            string sql = "select ReaderId,ReadingCard,ReaderName,Gender,IDCard,ReaderAddress,PostCode,PhoneNumber,ReaderRoles.RoleId,ReaderImage,StatusId,RoleName,AllowCounts,AllowDay from Readers";
             sql += " inner join ReaderRoles on Readers.RoleId=ReaderRoles.RoleId";
             SqlDataReader objReader = SqlHelper.ExecuteReader(sql+ sqlWhere, sqlParameters);
             Reader reader = null;
@@ -199,7 +199,9 @@ namespace DAL
                     RoleId = Convert.ToInt32(objReader["RoleId"]),
                     ReaderImage = objReader["ReaderImage"] is null ? "" : objReader["ReaderImage"].ToString(),
                     RoleName = objReader["RoleName"].ToString(),
-                    StatusId = Convert.ToInt32(objReader["StatusId"])
+                    StatusId = Convert.ToInt32(objReader["StatusId"]),
+                    AllowCounts = Convert.ToInt32(objReader["AllowCounts"]),
+                    AllowDay = Convert.ToInt32(objReader["AllowDay"])
                 };
             }
             objReader.Close();

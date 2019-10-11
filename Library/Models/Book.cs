@@ -30,5 +30,7 @@ namespace Models
         public string PublisherName { get; set; }
 
         public string CategoryName { get; set; }
+
+        public int ReturnCount { get; set; }
     }
 }
