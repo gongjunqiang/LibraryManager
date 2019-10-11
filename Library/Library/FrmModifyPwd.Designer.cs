@@ -57,6 +57,7 @@
             this.btnModify.TabIndex = 19;
             this.btnModify.Text = "确认修改";
             this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.Click += new System.EventHandler(this.BtnModify_Click);
             // 
             // txtNewPwdConfirm
             // 

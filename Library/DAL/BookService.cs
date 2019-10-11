@@ -193,7 +193,8 @@ namespace DAL
             };
             try
             {
-                return SqlHelper.ExecuteNonQuery(sql,sqlParameters);
+                var result = SqlHelper.ExecuteNonQuery(sql, sqlParameters);
+                return result;
             }
             catch (Exception ex)
             {

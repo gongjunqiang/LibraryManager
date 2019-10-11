@@ -174,6 +174,37 @@ namespace Library
             }
 
         }
+
+
+        //确认还书
+        private void BtnConfirmReturn_Click(object sender, EventArgs e)
+        {
+            if (this.dgvReturnList.RowCount != 0)
+            {
+                try
+                {
+                    borrowManager.ReturnBook(returnList, borrowList,Program.CurrentAdmin.AdminName);
+                    MessageBox.Show("还书成功!", "提示信息");
+                    //清空数据
+                    returnList.Clear();
+                    borrowList = null;
+                    this.txtBarCode.Enabled = false;
+                    this.btnConfirmReturn.Enabled = false;
+                    this.lblReturnCount.Text = "0";
+                    this.dgvNonReturnList.DataSource = null;
+                    this.dgvReturnList.DataSource = null;
+                    Clear();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("操作异常："+ex.Message, "异常提示");
+                }
+            }
+            else
+            {
+                MessageBox.Show("请选择需要归还的图书！!", "提示信息");
+            }
+        }
         #endregion
 
         private void DgvNonReturnList_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)

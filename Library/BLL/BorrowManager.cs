@@ -75,7 +75,7 @@ namespace BLL
                         list.Add(new ReturnBook
                         {
                             BorrowDetailId = borrowDetail.BorrowDetailId,
-                            ReturnCount = returnCount,
+                            ReturnCount = borrowDetail.NonReturnCount,
                             AdminName_R = adminName_R,
                         });
                         returnCount -= borrowDetail.NonReturnCount;

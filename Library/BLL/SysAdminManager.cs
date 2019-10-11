@@ -23,6 +23,15 @@ namespace BLL
             return adminService.AdminLogin(admin);
         }
 
-
+        /// <summary>
+        /// 修改密码
+        /// </summary>
+        /// <param name="pwd"></param>
+        /// <param name="adminId"></param>
+        /// <returns></returns>
+        public int MoifyPwd(string pwd, string adminId)
+        {
+            return adminService.MoifyPwd(pwd, adminId);
+        }
     }
 }

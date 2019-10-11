@@ -125,14 +125,14 @@ namespace Library
                     book.BookCount += Convert.ToInt32(this.txtAddCount.Text.Trim());
                     this.dgvBookList.Refresh();
 
-                    DialogResult dialogResult = MessageBox.Show("新增成功，是否需要继续更新该图书数量？", "新增提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    MessageBox.Show("新增成功，是否需要继续更新该图书数量？", "新增提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
-                    if (dialogResult == DialogResult.OK)
-                    {
-                        this.txtAddCount.Text = string.Empty;
-                        this.txtAddCount.Focus();
-                        return;
-                    }
+                    //if (dialogResult == DialogResult.OK)
+                    //{
+                    //    this.txtAddCount.Text = string.Empty;
+                    //    this.txtAddCount.Focus();
+                    //    return;
+                    //}
                     //清除其他信息：
                     this.lblBookName.Text = string.Empty;
                     this.lblCategory.Text = string.Empty;

@@ -51,6 +51,21 @@ namespace DAL
             }
         }
 
-
+        /// <summary>
+        /// 修改密码
+        /// </summary>
+        /// <param name="pwd"></param>
+        /// <param name="adminId"></param>
+        /// <returns></returns>
+        public int MoifyPwd(string pwd, string adminId)
+        {
+            string sql = "update SysAdmins set LoginPwd=@LoginPwd where AdminId=@AdminId";
+            SqlParameter[] sqlParameters = new SqlParameter[]
+            {
+                new SqlParameter("@LoginPwd",pwd),
+                new SqlParameter("@AdminId",adminId)
+            };
+            return SqlHelper.ExecuteNonQuery(sql, sqlParameters);
+        }
     }
 }
